@@ -7,15 +7,19 @@ async function getHr(){
     return await hr.text()
 }
 
-async function main(){
-    let hr = await getHr()
-    hrObj.innerHTML = hr
-    await wait(100);
-    main()
+function calcPulse(hr) {
+    const pulse = 60000 / hr;
+    return pulse;
 }
 
-async function wait(ms){
-    return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-main()
+container.addEventListener("animationiteration", async () => {
+    container.style.animation = 'none';
+    container.offsetHeight; // Trigger reflow
+    container.style.animation = null;
+    
+    const newHr = await getHr();
+    hrObj.innerHTML = newHr;
+    
+    const pulse = calcPulse(Number(newHr));
+    container.style.animationDuration = `${pulse}ms`;
+})
