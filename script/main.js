@@ -1,3 +1,6 @@
+const hrObj = document.getElementById("hr")
+const heartObj = document.getElementById("heart")
+
 async function getHr(){
 
     const hr = await fetch("hr/hr.txt")
@@ -5,8 +8,9 @@ async function getHr(){
 }
 
 async function main(){
-    console.log(await getHr())
-    await wait(500);
+    let hr = await getHr()
+    hrObj.innerHTML = hr
+    await wait(100);
     main()
 }
 
