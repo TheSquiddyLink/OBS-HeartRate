@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 #heart {
     height: 500px;
     position: absolute;
