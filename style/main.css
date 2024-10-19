@@ -13,9 +13,9 @@ body {
 #hr {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 150%);
+    transform: translate(-50%, 100%);
     color: black;
-    font-size: 15vh;
+    font-size: 20vh;
     margin: 0;
 }
 
