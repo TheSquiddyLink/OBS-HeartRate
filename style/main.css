@@ -1,5 +1,7 @@
 body {
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
 }
 
 #heart {
@@ -13,9 +15,9 @@ body {
 #hr {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 80%);
     color: black;
-    font-size: 20vh;
+    font-size: 25vh;
     margin: 0;
 }
 
