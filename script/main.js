@@ -3,8 +3,11 @@ const heartObj = document.getElementById("heart")
 
 async function getHr(){
 
-    const hr = await fetch("hr/hr.txt")
-    return await hr.text()
+    const hr = await (await fetch("hr/hr.txt")).text();   
+    if(Number(hr) <= 0){
+        return hrObj.innerHTML;
+    }
+    return hr;
 }
 
 function calcPulse(hr) {
